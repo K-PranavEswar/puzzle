@@ -13,7 +13,6 @@ function AppContent() {
       <header className="app-header">
         <div className="header-content">
           <div className="logo-section">
-            <span className="logo-icon">🧩</span>
             <h1 className="logo-text">Puzzle Master</h1>
           </div>
         </div>
