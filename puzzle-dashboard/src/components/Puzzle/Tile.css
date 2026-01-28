@@ -1,0 +1,328 @@
+/* ======================== TILE COMPONENT STYLES ======================== */
+
+.puzzle-tile {
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: clamp(8px, 1.5vw, 16px);
+  cursor: pointer;
+  font-weight: 900;
+  color: white;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ======================== ACTIVE TILE ======================== */
+
+.puzzle-tile.tile-active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3), 0 4px 12px rgba(118, 75, 162, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.puzzle-tile.tile-active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.puzzle-tile.tile-active:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(102, 126, 234, 0.4), 0 6px 16px rgba(118, 75, 162, 0.3);
+}
+
+.puzzle-tile.tile-active:hover::before {
+  opacity: 1;
+}
+
+/* ======================== PRESSED STATE ======================== */
+
+.puzzle-tile.tile-active.tile-pressed {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2), inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================== EMPTY TILE ======================== */
+
+.puzzle-tile.tile-empty {
+  background: linear-gradient(135deg, rgba(226, 232, 240, 0.8) 0%, rgba(203, 213, 225, 0.8) 100%);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 -2px 4px rgba(255, 255, 255, 0.5);
+  cursor: default;
+  border: 2px dashed rgba(148, 163, 184, 0.3);
+  opacity: 0.6;
+}
+
+.puzzle-tile.tile-empty:hover {
+  transform: none;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* ======================== HINT MODE ======================== */
+
+.puzzle-tile.tile-hint:not(.tile-empty) {
+  position: relative;
+}
+
+.puzzle-tile.tile-hint:not(.tile-empty)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+  animation: hintShine 2s infinite;
+  border-radius: clamp(8px, 1.5vw, 16px);
+}
+
+@keyframes hintShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ======================== TILE NUMBER ======================== */
+
+.tile-number {
+  position: relative;
+  z-index: 2;
+  font-size: inherit;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================== FOCUS STATES ======================== */
+
+.puzzle-tile:focus {
+  outline: 2px solid rgba(102, 126, 234, 0.6);
+  outline-offset: 2px;
+}
+
+.puzzle-tile:focus-visible {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* ======================== DISABLED STATE ======================== */
+
+.puzzle-tile:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ======================== MOBILE TOUCH OPTIMIZATIONS ======================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .puzzle-tile.tile-active:hover {
+    transform: none;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3), 0 4px 12px rgba(118, 75, 162, 0.2);
+  }
+
+  .puzzle-tile.tile-active {
+    min-height: 60px;
+  }
+}
+
+/* ======================== HIGH CONTRAST MODE ======================== */
+
+@media (prefers-contrast: more) {
+  .puzzle-tile.tile-active {
+    border: 3px solid white;
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5), 0 3px 8px rgba(118, 75, 162, 0.3);
+  }
+
+  .puzzle-tile.tile-empty {
+    border: 3px solid #94a3b8;
+  }
+}
+
+/* ======================== REDUCED MOTION ======================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .puzzle-tile {
+    transition: none;
+  }
+
+  .puzzle-tile.tile-hint:not(.tile-empty)::after {
+    animation: none;
+  }
+
+  .puzzle-tile:hover {
+    transform: none;
+  }
+}
+
+/* ======================== DARK MODE ======================== */
+
+@media (prefers-color-scheme: dark) {
+  .puzzle-tile.tile-active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4), 0 4px 16px rgba(118, 75, 162, 0.3);
+  }
+
+  .puzzle-tile.tile-empty {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border-color: rgba(102, 126, 234, 0.2);
+  }
+
+  .tile-number {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ======================== LANDSCAPE MODE OPTIMIZATION ======================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .puzzle-tile {
+    font-size: clamp(16px, 3vw, 24px);
+  }
+
+  .tile-number {
+    font-size: inherit;
+  }
+}
+
+/* ======================== SMALL SCREENS ======================== */
+
+@media (max-width: 380px) {
+  .puzzle-tile {
+    border-radius: clamp(6px, 1vw, 10px);
+  }
+
+  .puzzle-tile.tile-active {
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.25);
+  }
+}
+
+/* ======================== ANIMATION - Tile Entry ======================== */
+
+@keyframes tileEntry {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.puzzle-tile {
+  animation: tileEntry 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ======================== ANIMATION - Tile Success ======================== */
+
+@keyframes tileSuccess {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.puzzle-tile.tile-success {
+  animation: tileSuccess 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ======================== MULTI-LINE TEXT SUPPORT ======================== */
+
+@supports (display: flex) {
+  .puzzle-tile {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tile-number {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* ======================== RESPONSIVE FONT SIZING ======================== */
+
+@media (min-width: 1920px) {
+  .puzzle-tile {
+    font-size: clamp(28px, 5vw, 48px);
+  }
+}
+
+@media (max-width: 320px) {
+  .puzzle-tile {
+    font-size: clamp(18px, 4vw, 24px);
+    border-radius: 6px;
+  }
+}
+
+/* ======================== ACCESSIBILITY - KEYBOARD NAVIGATION ======================== */
+
+.puzzle-tile:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 0 0 6px #667eea;
+}
+
+/* ======================== LOADING STATE ======================== */
+
+@keyframes tileLoading {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.puzzle-tile.tile-loading {
+  animation: tileLoading 1.5s ease-in-out infinite;
+}
+
+/* ======================== ERROR STATE ======================== */
+
+@keyframes tileError {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+.puzzle-tile.tile-error {
+  animation: tileError 0.4s ease-in-out;
+  box-shadow: 0 0 0 2px #ef4444;
+}
+
+/* ======================== SUCCESS STATE ======================== */
+
+.puzzle-tile.tile-won {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.puzzle-tile.tile-won .tile-number {
+  animation: tileSuccess 0.6s ease-out;
+}
