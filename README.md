@@ -1,6 +1,6 @@
 # 🧩 8 Puzzle Dashboard
 
-An interactive and modern **8 Puzzle Game Dashboard** built using **React + Vite**. This project provides a visually appealing interface for solving the classic 8-puzzle problem with smooth gameplay and responsive design.
+An interactive and modern **8 Puzzle Game Dashboard** built using **React + Vite**. This project provides a visually appealing interface for solving the classic **8-puzzle problem** with smooth gameplay and responsive design.
 
 ## 🚀 Features
 
@@ -103,16 +103,9 @@ http://localhost:5173
 
 ## 📸 Screenshots
 
-Add project screenshots here.
-
-Example:
-
-```md
-<img width="1897" height="901" alt="Screenshot 2026-05-24 123541" src="https://github.com/user-attachments/assets/3ca5129c-fdd5-44d1-9bee-80ff1b3f8fa6" />
-```
+<img width="100%" alt="8 Puzzle Dashboard" src="https://github.com/user-attachments/assets/3ca5129c-fdd5-44d1-9bee-80ff1b3f8fa6" />
 
 ## 🌟 Future Enhancements
-
 
 - ⏱️ Timer system
 - 📊 Move counter
@@ -126,16 +119,17 @@ Example:
 
 Contributions are welcome!
 
-Steps to contribute:
+### Steps to Contribute
 
 1. Fork the repository
+
 2. Create a feature branch
 
 ```bash
 git checkout -b feature-name
 ```
 
-3. Commit changes
+3. Commit your changes
 
 ```bash
 git commit -m "Added new feature"
@@ -151,7 +145,7 @@ git push origin feature-name
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ## 👨‍💻 Developer
 
