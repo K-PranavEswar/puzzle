@@ -1,21 +1,22 @@
-# 🧩 8 Puzzle Game
+# 🧩 8 Puzzle Dashboard
 
-An interactive **8 Puzzle Game** built to solve the classic sliding puzzle problem using intelligent search techniques. The game challenges users to arrange numbered tiles in the correct order by moving them into the empty space.
+An interactive and modern **8 Puzzle Game Dashboard** built using **React + Vite**. This project provides a visually appealing interface for solving the classic 8-puzzle problem with smooth gameplay and responsive design.
 
 ## 🚀 Features
 
-- 🎮 Interactive 8-puzzle gameplay
-- 🧠 Intelligent puzzle-solving logic
-- 🔄 Shuffle and reset functionality
-- 🏆 Goal state detection
-- 📱 Responsive and user-friendly interface
-- ⚡ Fast performance and smooth gameplay
+- 🎮 Interactive 8 Puzzle gameplay
+- 🔀 Random puzzle shuffle
+- 🏆 Win detection system
+- 📱 Responsive UI for desktop and mobile
+- ⚡ Fast performance with Vite
+- 🎨 Modern dashboard-style interface
+- 🧠 Logical puzzle movement validation
 
 ## 📌 About the Project
 
-The **8 Puzzle Game** is a classic sliding puzzle consisting of a **3×3 grid** with numbered tiles from **1 to 8** and one empty space.
+The **8 Puzzle Game** is a classic sliding puzzle consisting of a **3×3 board** with numbered tiles from **1 to 8** and one empty tile.
 
-The objective is to rearrange the tiles from a scrambled state into the correct order:
+### Goal State
 
 ```text
 1 2 3
@@ -23,93 +24,142 @@ The objective is to rearrange the tiles from a scrambled state into the correct 
 7 8 _
 ```
 
-Players can move tiles adjacent to the empty space to solve the puzzle.
+The objective is to rearrange the scrambled tiles into the correct order by moving tiles adjacent to the empty space.
 
 This project demonstrates:
-- Problem-solving algorithms
-- State-space search concepts
-- Logical game implementation
-- Interactive UI development
 
-## 🛠️ Technologies Used
+- Problem-solving logic
+- Interactive game development
+- State management in React
+- Modern frontend development using Vite
 
-- HTML
-- CSS
+## 🛠️ Tech Stack
+
+- React.js
+- Vite
 - JavaScript
+- CSS
 
 ## 📂 Project Structure
 
 ```text
-8-puzzle-game/
-│── index.html
-│── style.css
-│── script.js
+puzzle-dashboard/
+│── public/
+│── src/
+│── .gitignore
+│── DEVELOPMENT.md
+│── FEATURES.md
+│── PROJECT_SUMMARY.md
+│── PUZZLE_UPDATE_SUMMARY.md
 │── README.md
+│── eslint.config.js
+│── index.html
+│── package.json
+│── package-lock.json
+│── vite.config.js
 ```
 
-## ▶️ How to Run the Project
+## ⚙️ Installation & Setup
 
-1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/K-PranavEswar/puzzle.git
 ```
 
-2. Navigate to the project folder
+### 2. Navigate to Project Folder
 
 ```bash
-cd puzzle
+cd puzzle/puzzle-dashboard
 ```
 
-3. Open `index.html` in your browser
+### 3. Install Dependencies
 
-Or use **Live Server** in VS Code for a better experience.
+```bash
+npm install
+```
+
+### 4. Start Development Server
+
+```bash
+npm run dev
+```
+
+### 5. Open in Browser
+
+Visit:
+
+```text
+http://localhost:5173
+```
 
 ## 🎯 How to Play
 
-1. Start the puzzle.
-2. Click on a tile adjacent to the empty space.
-3. Rearrange the numbers into the correct order.
-4. Complete the puzzle to win.
+1. Start the game.
+2. Click a tile next to the empty space.
+3. Move tiles strategically.
+4. Arrange numbers in the correct order.
+5. Solve the puzzle to win.
 
-## 📸 Preview
+## 📸 Screenshots
 
-Add screenshots of your game here.
+Add project screenshots here.
 
 Example:
 
 ```md
-![Game Preview](screenshot.png)
+<img width="1897" height="901" alt="image" src="https://github.com/user-attachments/assets/a916e70b-2608-41ae-a3df-807800086b19" />
 ```
 
-## 🌟 Future Improvements
+## 🌟 Future Enhancements
 
-- Add timer functionality
-- Add move counter
-- Multiple difficulty levels
-- AI auto-solver
-- Dark mode UI
-- Sound effects and animations
+- ⏱️ Timer system
+- 📊 Move counter
+- 🏅 Score tracking
+- 🧠 AI auto-solver
+- 🌙 Dark mode
+- 🔊 Sound effects
+- 📈 Difficulty levels
 
 ## 🤝 Contributing
 
 Contributions are welcome!
 
-If you'd like to improve this project:
+Steps to contribute:
 
 1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Push to the branch
+2. Create a feature branch
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push changes
+
+```bash
+git push origin feature-name
+```
+
 5. Open a Pull Request
 
 ## 📄 License
 
-This project is open-source and available under the **MIT License**.
+This project is licensed under the MIT License.
 
-## 👨‍💻 Author
+## 👨‍💻 Developer
 
-Developed by **Pranav Eswar**
+**Pranav Eswar**
 
-🔗 GitHub: https://github.com/K-PranavEswar
-🔗 LinkedIn: https://www.linkedin.com/in/k-pranav-eswar1/
+GitHub: https://github.com/K-PranavEswar
+
+LinkedIn: https://www.linkedin.com/in/k-pranav-eswar1/
+
+---
+
+⭐ If you like this project, don't forget to star the repository!
