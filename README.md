@@ -108,10 +108,11 @@ Add project screenshots here.
 Example:
 
 ```md
-<img width="1897" height="901" alt="image" src="https://github.com/user-attachments/assets/a916e70b-2608-41ae-a3df-807800086b19" />
+<img width="1897" height="901" alt="Screenshot 2026-05-24 123541" src="https://github.com/user-attachments/assets/3ca5129c-fdd5-44d1-9bee-80ff1b3f8fa6" />
 ```
 
 ## 🌟 Future Enhancements
+
 
 - ⏱️ Timer system
 - 📊 Move counter
